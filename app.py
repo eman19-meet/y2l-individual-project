@@ -104,8 +104,8 @@ def Post():
 
 		return redirect(url_for('home_page'))
 
-app.run(debug=True)
-
+if __name__ == '__main__':
+    app.run(debug=True)
 # @app.route('/sign_out')
 # def sign_out():
 #     session.pop('username')
