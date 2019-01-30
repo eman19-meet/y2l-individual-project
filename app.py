@@ -44,7 +44,8 @@ def LogIn():
 		#When they login, store the username in session
 		login_session['username'] = username
 		u=query_by_name(username)
-		if u is not None and u.uname==username and u.password==password:
+		p=query_by_pass(username)
+		if u is not None and u==username and p==password:
 			return redirect(url_for('home_page' ))
 		else:
 			return render_template('login.html')

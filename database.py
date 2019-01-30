@@ -22,6 +22,12 @@ def query_by_name(uname):
 	print(user)
 	return user.uname
 
+def query_by_pass(uname):
+	user = session.query(User).filter_by(
+		uname=uname).first()
+	print(user)
+	return user.password
+
 def query_all():
 	users = session.query(User).all()
 	return users
